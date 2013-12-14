@@ -8,7 +8,6 @@ Row
 
   GLTeapot
   {
-    //color: red
     width: 320
     height: 240
   }
