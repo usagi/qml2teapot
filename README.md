@@ -12,13 +12,13 @@
 
 ## build
 
-git clone https://github.com/usagi/qml2teapot.git
-mkdir qml2teapot.build
-cd qml2teapot.build
-cmake -G Ninja ../qml2teapot
-ninja
+    git clone https://github.com/usagi/qml2teapot.git
+    mkdir qml2teapot.build
+    cd qml2teapot.build
+    cmake -G Ninja ../qml2teapot
+    ninja
 
 ## run
 
-qmlscene test.qml
+    qmlscene test.qml
 
