@@ -73,7 +73,7 @@ QSGNode* gl_teapot::updatePaintNode(QSGNode* node_old, UpdatePaintNodeData* data
     delete fbo;
     fbo = nullptr;
     
-    fbo = new QOpenGLFramebufferObject(width(), height());
+    fbo = new QOpenGLFramebufferObject(width(), height(), QOpenGLFramebufferObject::Depth);
     node->setTexture(window()->createTextureFromId(fbo->texture(), fbo->size()));
     
     node->setRect(boundingRect());
@@ -121,12 +121,13 @@ QSGNode* gl_teapot::updatePaintNode(QSGNode* node_old, UpdatePaintNodeData* data
                , 0., 1., 0.
                );
 
+      glEnable(GL_DEPTH_TEST);
       glEnable(GL_LIGHT0);
       glEnable(GL_LIGHTING);
       
       glViewport(0, 0, width(), height());
       
-      glutWireTeapot(0.8);
+      glutSolidTeapot(0.8);
       
       fbo->release();
     }
