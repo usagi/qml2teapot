@@ -21,7 +21,6 @@ private:
   uint64_t timer_counter;
   
   static constexpr int timer_interval = 16;
-  static constexpr float pi = 3.14159265359f;
 };
 
 QML_DECLARE_TYPE(gl_teapot)
