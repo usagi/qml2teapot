@@ -6,6 +6,7 @@
 #include <QOpenGLBuffer>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include <GL/freeglut_ext.h>
 #include "gl_teapot.h"
 
 gl_teapot::gl_teapot(QQuickItem *parent):
@@ -14,8 +15,11 @@ gl_teapot::gl_teapot(QQuickItem *parent):
   setFlag(ItemHasContents);
   setSmooth(false);
 
-  int argc = 0;
-  glutInit(&argc, {});
+  if(!glutGet(GLUT_INIT_STATE))
+  {
+    int argc = 0;
+    glutInit(&argc, {});
+  }
   
   timer_id = startTimer(timer_interval);
 }
